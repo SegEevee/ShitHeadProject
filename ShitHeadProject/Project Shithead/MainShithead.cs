@@ -30,15 +30,18 @@ public static class Shithead
     private static bool TurnSwiched = false;
 
     public static bool SomeoneWon = false;
-    public static void StartGame(bool Input) {
+    public static void StartGame(bool Input)
+    {
         if (Input) ActualGame(int.Parse(Console.ReadLine()));
         ActualGame(4);
     }
-    public static void StartGame(int NumOfPlayers) {
+    public static void StartGame(int NumOfPlayers)
+    {
         ActualGame(NumOfPlayers);
     }
 
-    public static void StartGame() {
+    public static void StartGame()
+    {
         ActualGame(4);
     }
 
@@ -145,7 +148,8 @@ public static class Shithead
     private static bool TurnReveresedThisTurn = false;
     #endregion
 
-    private static void ActualGame(int NumOfPlayers) {
+    private static void ActualGame(int NumOfPlayers)
+    {
         const int NUM_OF_TURNS_UNTIL_PILE_VIEW = 4;
 
         numOfPlayers = NumOfPlayers;
@@ -157,20 +161,24 @@ public static class Shithead
             players.Add(new PlayerHand(gameDeck, gamePile, true));
         Index = 0;
 
-        while (true) {
-            
+        while (true)
+        {
+
             if (AllCounter % NUM_OF_TURNS_UNTIL_PILE_VIEW == 0) gamePile.ViewPile();
+
             tempCount = Math.Abs(AllCounter % NumOfPlayers);
             PlayerHand temp = players[tempCount];
             Console.Write("player {0}: ", tempCount + 1);
-            temp.ViewHand();
+            temp.Show();
             Console.WriteLine("enter the Card you want to");
             string card = Console.ReadLine();
             bool InvalidCard = !gamePile.ValidCard(card);
 
-            if (!temp.Play(card)) {
+            if (!temp.Play(card))
+            {
 
-                if (InvalidCard) {
+                if (InvalidCard)
+                {
                     Console.WriteLine("card weaker");
                     temp.TakeAll();
                     Console.WriteLine($"new hand: {temp}");
@@ -182,16 +190,19 @@ public static class Shithead
         }
     }
 
-    public static void StartTestGame(int NumOfPLayers) {
+    public static void StartTestGame(int NumOfPLayers)
+    {
         TestGameUntilTrio(numOfPlayers);
     }
-    public static void StartTestGame() {
+    public static void StartTestGame()
+    {
         TestGameUntilTrio(DEFAULT_NUM_OF_PLAYERS);
     }
 
-    private static void TestGameUntilTrio(int NumOfPlayers) {
+    private static void TestGameUntilTrio(int NumOfPlayers)
+    {
         const int NUM_OF_TURNS_UNTIL_PILE_VIEW = 4;
-
+        string j = "nofar";
         numOfPlayers = NumOfPlayers;
         if (numOfPlayers < 2 || numOfPlayers > 6) return;
         gameDeck = new GameDeck();
@@ -201,7 +212,8 @@ public static class Shithead
             players.Add(new PlayerHand(gameDeck, gamePile, true));
         Index = 0;
 
-        while (players[tempCount].GetState() == 0) {
+        while (j.Equals("nofar"))
+        {
             if (AllCounter % NUM_OF_TURNS_UNTIL_PILE_VIEW == 0) gamePile.ViewPile();
             tempCount = Math.Abs(AllCounter % NumOfPlayers);
             PlayerHand temp = players[tempCount];
@@ -211,9 +223,11 @@ public static class Shithead
             string card = temp.GetBestCard();
             bool InvalidCard = !gamePile.ValidCard(card);
             Console.WriteLine(card);
-            if (!temp.Play(card)) {
+            if (!temp.Play(card))
+            {
 
-                if (InvalidCard) {
+                if (InvalidCard)
+                {
                     Console.WriteLine("card weaker");
                     temp.TakeAll();
                     Console.WriteLine($"new hand: {temp}");
@@ -221,14 +235,16 @@ public static class Shithead
                 else { Console.WriteLine("invalid card please try again"); continue; }
 
             }
-            if (Won) break;
+            if (!(players[tempCount].GetState() == 0))
+                break;
             UpdateCounter();
             ZeroOut();
         }
 
         Console.WriteLine("reached trio");
 
-        while (true) {
+        while (true)
+        {
 
             if (AllCounter % NUM_OF_TURNS_UNTIL_PILE_VIEW == 0) gamePile.ViewPile();
             tempCount = Math.Abs(AllCounter % NumOfPlayers);
@@ -239,14 +255,16 @@ public static class Shithead
             string card = Console.ReadLine();
             bool InvalidCard = !gamePile.ValidCard(card);
 
-            if (!temp.Play(card)) {
+            if (!temp.Play(card))
+            {
 
-                if (InvalidCard) {
+                if (InvalidCard)
+                {
                     Console.WriteLine("card weaker");
                     temp.TakeAll();
                     Console.WriteLine($"new hand: {temp}");
                 }
-                else {Console.WriteLine("invalid card please try again"); continue; }
+                else { Console.WriteLine("invalid card please try again"); continue; }
             }
             if (Won) break;
             UpdateCounter();
@@ -256,35 +274,42 @@ public static class Shithead
 
 
 
-    private static void ZeroOut() {
+    private static void ZeroOut()
+    {
         Burn = false;
         Skip = false;
         TurnReveresedThisTurn = false;
     }
 
-    private static void UpdateCounter() {
+    private static void UpdateCounter()
+    {
         if (Burn) return;
-        if (TurnForward) {
+        if (TurnForward)
+        {
             AllCounter++;
             if (Skip) AllCounter++;
         }
         else { AllCounter--; if (Skip) AllCounter--; }
     }
 
-    public static void BroWon() {
+    public static void BroWon()
+    {
         Won = true;
     }
-    public static void ChangeDirection() {
+    public static void ChangeDirection()
+    {
         if (TurnReveresedThisTurn) return;
         TurnReveresedThisTurn = true;
         TurnForward = !TurnForward;
     }
-    public static void SkipTurn() {
+    public static void SkipTurn()
+    {
 
         Skip = true;
 
     }
-    public static void BurnTurn() {
+    public static void BurnTurn()
+    {
         Burn = true;
     }
 

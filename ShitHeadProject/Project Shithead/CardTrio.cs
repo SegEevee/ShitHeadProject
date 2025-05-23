@@ -87,6 +87,9 @@ public class CardTrio
     public bool Play() {
         if (shown) return false;
         if (parentHand.Won()) Shithead.BroWon();
+
+        Console.WriteLine("Blind card= " + cards[cards.Count-1]);
+
         return gamePile.PilePlay(this, cards[cards.Count - 1]);
     }
 
@@ -97,7 +100,7 @@ public class CardTrio
     public void View() {
         if (shown) {
             Console.WriteLine("state: shown");
-            Console.Write("pile: ");
+            Console.Write("TrioCards: ");
             foreach (Card c in cards) Console.Write(c + ",");
             return;
         }
