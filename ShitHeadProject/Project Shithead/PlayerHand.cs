@@ -30,15 +30,15 @@ public class PlayerHand
             gamedeck.DrawFromDeck(this);
         this.gamePile = gamePile;
         this.hiddenTrio = new CardTrio(this, gamedeck, gamePile, false);
-        this.shownTrio = new CardTrio(this, gamedeck,gamePile,true);
+        this.shownTrio = new CardTrio(this, gamedeck, gamePile, true);
     }
-    public PlayerHand(GameDeck gamedeck, GamePile gamePile,bool IsTesting) {
+    public PlayerHand(GameDeck gamedeck, GamePile gamePile, bool IsTesting) {
         this.gamedeck = gamedeck;
         for (int i = 0; i < NUMBER_OF_CARDS_AT_START; i++)
             gamedeck.DrawFromDeck(this);
         this.gamePile = gamePile;
-        this.hiddenTrio = new CardTrio(this, gamedeck, gamePile, false,true);
-        this.shownTrio = new CardTrio(this, gamedeck, gamePile, true,true);
+        this.hiddenTrio = new CardTrio(this, gamedeck, gamePile, false, true);
+        this.shownTrio = new CardTrio(this, gamedeck, gamePile, true, true);
     }
 
     public void AddCard(Card card) {
@@ -76,7 +76,7 @@ public class PlayerHand
         hand.Remove(card);
     }
 
-    
+
 
     public void ShuffleHand() {
         Random rnd = new Random();
@@ -100,7 +100,7 @@ public class PlayerHand
 
     #region Play
     public bool Play(Card card) {
-        if(IsEmpty()) {
+        if (IsEmpty()) {
             if (!shownTrio.IsEmpty()) return shownTrio.Play(card);
             if (!hiddenTrio.IsEmpty()) return hiddenTrio.Play();
         }
@@ -115,7 +115,7 @@ public class PlayerHand
     }
 
     public bool Play(string card) {
-       
+
         card = card.ToUpper();
         int TempNum;
         if (int.TryParse(card, out TempNum) && gamePile.ValidCard(TempNum)) return Play(TempNum);
@@ -137,7 +137,7 @@ public class PlayerHand
 
     public bool Play(int numberToPlay) {
 
-        if(numberToPlay < 0 && numberToPlay > 14) return false;
+        if (numberToPlay < 0 && numberToPlay > 14) return false;
 
         if (!gamePile.ValidCard(numberToPlay)) { TakeAll(); return false; }
 
@@ -162,9 +162,33 @@ public class PlayerHand
     }
 
 
+    //calculates the best card to put objectivly (not accounting to other players but doesn't need to)
+    public string GetBestCard() {
+        if (IsEmpty()) return "bruv";
+        foreach (Card c in this.hand) {
+            switch (c.GetNumber()) {
+            case 2:
+            case 3:
+            case 10:
+                continue;
+            default:
+                if (gamePile.ValidCard(c)) {
+                    return c.ToString();
+                }
+                break;
+            }
+        }
+        foreach (Card c in this.hand) {
+            int tempNum = c.GetNumber();
+            if (tempNum == 2 || tempNum == 3 || tempNum == 10) {
+                return c.ToString();
+            }
+        }
+        return hand[hand.Count - 1].ToString();
+    }
 
     public string GetRandomtCard() {
-        return this.hand[random.Next(0,CardCount())].ToString();
+        return this.hand[random.Next(0, CardCount())].ToString();
     }
 
 
@@ -175,8 +199,8 @@ public class PlayerHand
     #endregion
 
     public bool HasCard(string card) {
-        foreach(Card c in this.hand)
-            if(card.Equals(card)) return true;
+        foreach (Card c in this.hand)
+            if (card.Equals(card)) return true;
         return false;
     }
 
@@ -187,15 +211,15 @@ public class PlayerHand
     }
 
     public int CardPlace(Card card) {
-        for(int i = 0; i < this.hand.Count; i++)
-            if(this.hand[i].Equals(card)) return i;
+        for (int i = 0; i < this.hand.Count; i++)
+            if (this.hand[i].Equals(card)) return i;
         return -1;
     }
 
     public bool HasCard(Card card, bool RemoveCard) {
-        if(!RemoveCard) return HasCard(card);
+        if (!RemoveCard) return HasCard(card);
         int place = CardPlace(card);
-        if (place != -1) {this.hand.RemoveAt(place); return true; }
+        if (place != -1) { this.hand.RemoveAt(place); return true; }
         return false;
     }
 
@@ -215,8 +239,8 @@ public class PlayerHand
     //won - 3
     public int GetState() {
         if (!IsEmpty()) return 0;
-        if(!shownTrio.IsEmpty()) return 1;
-        if(!hiddenTrio.IsEmpty()) return 2;
+        if (!shownTrio.IsEmpty()) return 1;
+        if (!hiddenTrio.IsEmpty()) return 2;
         return 3;
     }
 

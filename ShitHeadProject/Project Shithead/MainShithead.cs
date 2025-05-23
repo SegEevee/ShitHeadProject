@@ -208,7 +208,7 @@ public static class Shithead
             Console.Write("player {0}: ", tempCount + 1);
             temp.Show();
             Console.WriteLine("currenmt all counter: {0} and current tempcount: {1}", AllCounter, tempCount);
-            string card = temp.GetStrongestCard();
+            string card = temp.GetBestCard();
             bool InvalidCard = !gamePile.ValidCard(card);
             Console.WriteLine(card);
             if (!temp.Play(card)) {

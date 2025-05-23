@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|c:\\users\\segev\\onedrive\\\u05DE\u05E1\u05DE\u05DB\u05D9\u05DD\\shitheadproject\\shitheadproject\\mainscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\mainscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|c:\\users\\segev\\onedrive\\\u05DE\u05E1\u05DE\u05DB\u05D9\u05DD\\shitheadproject\\shitheadproject\\project shithead\\mainshithead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\mainshithead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|c:\\users\\segev\\onedrive\\\u05DE\u05E1\u05DE\u05DB\u05D9\u05DD\\shitheadproject\\shitheadproject\\project shithead\\playerhand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\playerhand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|c:\\users\\segev\\onedrive\\\u05DE\u05E1\u05DE\u05DB\u05D9\u05DD\\shitheadproject\\shitheadproject\\project shithead\\pile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\pile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +26,51 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Pile.cs",
+              "DocumentMoniker": "C:\\Users\\segev\\OneDrive\\\u05DE\u05E1\u05DE\u05DB\u05D9\u05DD\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\Pile.cs",
+              "RelativeDocumentMoniker": "ShitHeadProject\\Project Shithead\\Pile.cs",
+              "ToolTip": "C:\\Users\\segev\\OneDrive\\\u05DE\u05E1\u05DE\u05DB\u05D9\u05DD\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\Pile.cs",
+              "RelativeToolTip": "ShitHeadProject\\Project Shithead\\Pile.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAA9wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:10:42.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainShithead.cs",
+              "DocumentMoniker": "C:\\Users\\segev\\OneDrive\\\u05DE\u05E1\u05DE\u05DB\u05D9\u05DD\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\MainShithead.cs",
+              "RelativeDocumentMoniker": "ShitHeadProject\\Project Shithead\\MainShithead.cs",
+              "ToolTip": "C:\\Users\\segev\\OneDrive\\\u05DE\u05E1\u05DE\u05DB\u05D9\u05DD\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\MainShithead.cs",
+              "RelativeToolTip": "ShitHeadProject\\Project Shithead\\MainShithead.cs",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAswNIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:06:56.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerHand.cs",
+              "DocumentMoniker": "C:\\Users\\segev\\OneDrive\\\u05DE\u05E1\u05DE\u05DB\u05D9\u05DD\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\PlayerHand.cs",
+              "RelativeDocumentMoniker": "ShitHeadProject\\Project Shithead\\PlayerHand.cs",
+              "ToolTip": "C:\\Users\\segev\\OneDrive\\\u05DE\u05E1\u05DE\u05DB\u05D9\u05DD\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\PlayerHand.cs",
+              "RelativeToolTip": "ShitHeadProject\\Project Shithead\\PlayerHand.cs",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAA7wLoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:06:46.576Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,14 +79,10 @@
               "RelativeDocumentMoniker": "ShitHeadProject\\MainScript.cs",
               "ToolTip": "C:\\Users\\segev\\OneDrive\\\u05DE\u05E1\u05DE\u05DB\u05D9\u05DD\\ShitHeadProject\\ShitHeadProject\\MainScript.cs",
               "RelativeToolTip": "ShitHeadProject\\MainScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T16:52:48.567Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
             }
           ]
         }
