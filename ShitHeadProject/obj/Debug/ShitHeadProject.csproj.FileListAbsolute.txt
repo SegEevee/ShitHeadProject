@@ -1,0 +1,7 @@
+C:\Users\segev\OneDrive\מסמכים\ShitHeadProject\ShitHeadProject\bin\Debug\ShitHeadProject.exe.config
+C:\Users\segev\OneDrive\מסמכים\ShitHeadProject\ShitHeadProject\bin\Debug\ShitHeadProject.exe
+C:\Users\segev\OneDrive\מסמכים\ShitHeadProject\ShitHeadProject\bin\Debug\ShitHeadProject.pdb
+C:\Users\segev\OneDrive\מסמכים\ShitHeadProject\ShitHeadProject\obj\Debug\ShitHeadProject.csproj.AssemblyReference.cache
+C:\Users\segev\OneDrive\מסמכים\ShitHeadProject\ShitHeadProject\obj\Debug\ShitHeadProject.csproj.CoreCompileInputs.cache
+C:\Users\segev\OneDrive\מסמכים\ShitHeadProject\ShitHeadProject\obj\Debug\ShitHeadProject.exe
+C:\Users\segev\OneDrive\מסמכים\ShitHeadProject\ShitHeadProject\obj\Debug\ShitHeadProject.pdb

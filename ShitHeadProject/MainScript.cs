@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectShitHead
+namespace ShitHeadProject
 {
     internal class MainScript
     {
         static void Main(string[] args) {
+            Shithead.StartGame();
         }
     }
 }
