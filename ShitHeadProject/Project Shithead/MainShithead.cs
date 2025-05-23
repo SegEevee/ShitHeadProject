@@ -221,7 +221,6 @@ public static class Shithead
                 else { Console.WriteLine("invalid card please try again"); continue; }
 
             }
-            Console.WriteLine(Won);
             if (Won) break;
             UpdateCounter();
             ZeroOut();
@@ -236,7 +235,7 @@ public static class Shithead
             PlayerHand temp = players[tempCount];
             Console.Write("player {0}: ", tempCount + 1);
             temp.Show();
-            Console.WriteLine("currenmt all counter: {0} and current tempcount: {1}",AllCounter,tempCount);
+            Console.WriteLine("enter the card you want to play");
             string card = Console.ReadLine();
             bool InvalidCard = !gamePile.ValidCard(card);
 

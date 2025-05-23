@@ -20,6 +20,8 @@ public class PlayerHand
     private CardTrio shownTrio;
     private CardTrio hiddenTrio;
 
+    private bool temporaryTakeCardForGameDeckFull = true;
+
     /// <summary>
     /// Do this at a beninging of a game
     /// </summary>
@@ -63,7 +65,9 @@ public class PlayerHand
     public List<Card> GetHand() { return hand; }
 
     public void DrawCard() {
+        int NumOfCardsBeforeDraw = CardCount();
         gamedeck.DrawFromDeck(this);
+        if (NumOfCardsBeforeDraw == CardCount()) temporaryTakeCardForGameDeckFull = false;
     }
 
     public bool IsEmpty() {
@@ -270,8 +274,10 @@ public class PlayerHand
 
 
     public void CheckTake() {
-        while (hand.Count < NUMBER_OF_CARDS_TO_COMPLETE)
+        temporaryTakeCardForGameDeckFull = true;
+        while (hand.Count < NUMBER_OF_CARDS_TO_COMPLETE && temporaryTakeCardForGameDeckFull) {
             DrawCard();
+        }
     }
 
     public void TakeAll() {
