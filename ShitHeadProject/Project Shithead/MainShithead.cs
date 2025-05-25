@@ -42,96 +42,7 @@ public static class Shithead
         ActualGame(4);
     }
 
-    /*
-    private static void ActualGame(int NumOfPlayers) {
-        numOfPlayers = NumOfPlayers;
-        if (numOfPlayers < 2 || numOfPlayers > 6) return;
-        gameDeck = new GameDeck();
-        gamePile = new GamePile();
-        players = new List<PlayerHand>();
-        for (int i = 1; i <= numOfPlayers; i++)
-            players.Add(new PlayerHand(gameDeck, gamePile));
-        while (true) {
-            gamePile.ViewPile();
-            for (Index = SetIndexTo; CheckDirection(); Index += indexToAdd) {
-                Console.WriteLine($"the current index is {Index}, the IndextoAdd is {indexToAdd}" +
-                    $" \n and the setindex is {SetIndexTo}");
-                PlayerHand temp = players[Index];
-                Console.Write("player {0}: ", Index + 1);
-                temp.ViewHand();
-                Console.WriteLine("enter the Card you want to");
-                string card = Console.ReadLine();
-                int tempCount = temp.CardCount();
-                bool InvalidCard = !gamePile.ValidCard(card);
-
-                if (!temp.Play(card)) {
-
-                    if (InvalidCard) {
-                        Console.WriteLine("card weaker");
-                        temp.TakeAll();
-                        Console.WriteLine($"new hand: {temp}");
-                        continue;
-                    }
-                    Console.WriteLine("invalid card");
-                    Index -= indexToAdd;
-
-                }
-                if(SomeoneWon) break;
-
-            }
-            if(SomeoneWon) break;
-
-        }
-
-        Console.WriteLine("player {0} Won! ggs",Index + 1);
-    }
-
-    */
-
-
-    //private static void ActualGame(int NumOfPlayers,bool Testing) {
-    //    numOfPlayers = NumOfPlayers;
-    //    if (numOfPlayers < 2 || numOfPlayers > 6) return;
-    //    gameDeck = new GameDeck();
-    //    gamePile = new GamePile();
-    //    players = new List<PlayerHand>();
-    //    for (int i = 1; i <= numOfPlayers; i++)
-    //        players.Add(new PlayerHand(gameDeck, gamePile,true));
-    //    while (true) {
-    //        gamePile.ViewPile();
-    //        for (Index = SetIndexTo; CheckDirection(); Index += indexToAdd) {
-    //            Console.WriteLine($"the current index is {Index}, the IndextoAdd is {indexToAdd}" +
-    //                $" \n and the setindex is {SetIndexTo}");
-    //            PlayerHand temp = players[Index];
-    //            Console.Write("player {0}: ", Index + 1);
-    //            temp.ViewHand();
-    //            Console.WriteLine("enter the Card you want to");
-    //            string card = Console.ReadLine();
-    //            int tempCount = temp.CardCount();
-    //            bool InvalidCard = !gamePile.ValidCard(card);
-
-    //            if (!temp.Play(card)) {
-
-    //                if (InvalidCard) {
-    //                    Console.WriteLine("card weaker");
-    //                    temp.TakeAll();
-    //                    Console.WriteLine($"new hand: {temp}");
-    //                    continue;
-    //                }
-    //                Console.WriteLine("invalid card");
-    //                Index -= indexToAdd;
-
-    //            }
-    //            if (SomeoneWon) break;
-
-    //        }
-    //        if (SomeoneWon) break;
-
-    //    }
-
-    //    Console.WriteLine("player {0} Won! ggs", Index + 1);
-    //}
-
+ 
     #region TryForLogic
 
     #region try
@@ -271,6 +182,9 @@ public static class Shithead
     }
 
     #endregion
+
+
+
     /*
      * private static bool CheckDirection() {
         TurnSkipped = false;
@@ -364,6 +278,8 @@ public static class Shithead
             ZeroOut();
         }
     }
+
+
 
 
     }*/
