@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|c:\\users\\ron_f\\onedrive\\documents\\github\\shitheadproject\\shitheadproject\\project shithead\\cardtrio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\cardtrio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\shitheadproject\\project shithead\\mainshithead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\mainshithead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|c:\\users\\ron_f\\onedrive\\documents\\github\\shitheadproject\\shitheadproject\\project shithead\\mainshithead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\mainshithead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\shitheadproject\\mainscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\mainscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|c:\\users\\ron_f\\onedrive\\documents\\github\\shitheadproject\\shitheadproject\\project shithead\\cardtrio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\cardtrio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\shitheadproject\\project shithead\\playerhand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\playerhand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|c:\\users\\ron_f\\onedrive\\documents\\github\\shitheadproject\\shitheadproject\\project shithead\\gamedeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\shitheadproject\\project shithead\\gamedeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\gamedeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\shitheadproject\\mainscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\mainscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,7 +38,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "GameDeck.cs",
               "DocumentMoniker": "C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\GameDeck.cs",
               "RelativeDocumentMoniker": "ShitHeadProject\\Project Shithead\\GameDeck.cs",
@@ -46,12 +46,11 @@
               "RelativeToolTip": "ShitHeadProject\\Project Shithead\\GameDeck.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T18:30:24.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T18:30:24.224Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CardTrio.cs",
               "DocumentMoniker": "C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\CardTrio.cs",
               "RelativeDocumentMoniker": "ShitHeadProject\\Project Shithead\\CardTrio.cs",
@@ -64,20 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainShithead.cs",
-              "DocumentMoniker": "C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\MainShithead.cs",
-              "RelativeDocumentMoniker": "ShitHeadProject\\Project Shithead\\MainShithead.cs",
-              "ToolTip": "C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\MainShithead.cs",
-              "RelativeToolTip": "ShitHeadProject\\Project Shithead\\MainShithead.cs",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAxwKcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T17:06:56.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PlayerHand.cs",
               "DocumentMoniker": "C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\PlayerHand.cs",
               "RelativeDocumentMoniker": "ShitHeadProject\\Project Shithead\\PlayerHand.cs",
@@ -85,18 +71,30 @@
               "RelativeToolTip": "ShitHeadProject\\Project Shithead\\PlayerHand.cs",
               "ViewState": "AgIAAFQAAAAAAAAAAAAEwGwAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T17:06:46.576Z",
+              "WhenOpened": "2025-05-23T17:06:46.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainShithead.cs",
+              "DocumentMoniker": "C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\MainShithead.cs",
+              "RelativeDocumentMoniker": "ShitHeadProject\\Project Shithead\\MainShithead.cs",
+              "ToolTip": "C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\MainShithead.cs*",
+              "RelativeToolTip": "ShitHeadProject\\Project Shithead\\MainShithead.cs*",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAQwMsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:06:56.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "MainScript.cs",
               "DocumentMoniker": "C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\ShitHeadProject\\MainScript.cs",
               "RelativeDocumentMoniker": "ShitHeadProject\\MainScript.cs",
-              "ToolTip": "C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\ShitHeadProject\\MainScript.cs",
-              "RelativeToolTip": "ShitHeadProject\\MainScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ron_f\\OneDrive\\Documents\\GitHub\\ShitHeadProject\\ShitHeadProject\\MainScript.cs*",
+              "RelativeToolTip": "ShitHeadProject\\MainScript.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T16:52:48.567Z",
               "EditorCaption": ""

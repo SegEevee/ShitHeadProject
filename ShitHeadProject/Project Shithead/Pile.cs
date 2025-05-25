@@ -21,7 +21,6 @@ public class GamePile
         if (ValidCard(card)) {
             PutCard(hand, card);
             hand.CheckTake();
-            Console.WriteLine("reached PilePlay ph,c");
             return true;
         }
         TakePile(hand);
@@ -31,7 +30,6 @@ public class GamePile
     public bool PilePlay(CardTrio trio, Card card) {
         if (ValidCard(card)) {
             PutCard(trio, card);
-            Console.WriteLine("valid PilePlay t,c");
             return true;
         }
         TakePile(trio.GetParentHand());
@@ -48,6 +46,11 @@ public class GamePile
 
     public bool ValidCard(string card) {
         return ValidCard(new Card(card));
+    }
+
+    public int GetLastCard() {
+        if(IsEmpty()) return 0;
+        return cardpile[cardpile.Count - 1].GetNumber();
     }
 
     public bool ValidateCardFull(int card) {
