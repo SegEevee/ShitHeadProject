@@ -42,7 +42,7 @@ public static class Shithead
         ActualGame(4);
     }
 
- 
+
     #region TryForLogic
 
     #region try
@@ -54,6 +54,7 @@ public static class Shithead
     private static bool Burn = false;
     private static bool Skip = false;
     private static bool TurnReveresedThisTurn = false;
+    private static bool SinglePlayer = false;
     #endregion
 
     private static void ActualGame(int NumOfPlayers) {
@@ -69,7 +70,6 @@ public static class Shithead
         Index = 0;
 
         while (true) {
-
             if (AllCounter % NUM_OF_TURNS_UNTIL_PILE_VIEW == 0) gamePile.ViewPile();
             tempCount = Math.Abs(AllCounter % NumOfPlayers);
             PlayerHand temp = players[tempCount];
@@ -105,6 +105,7 @@ public static class Shithead
         string card;
         numOfPlayers = NumOfPlayers;
         if (numOfPlayers < 2 || numOfPlayers > 6) return;
+        SinglePlayer = true;
         gameDeck = new GameDeck();
         gamePile = new GamePile();
         players = new List<PlayerHand>();
@@ -156,7 +157,7 @@ public static class Shithead
             ZeroOut();
         }
 
-        Console.WriteLine("reached trio");
+        Console.WriteLine("Player {0} won!",tempCount + 1);
 
     }
 
@@ -179,6 +180,48 @@ public static class Shithead
 
     }
 
+    #region Joker
+    public static void Joker() {
+        if (SinglePlayer) JokerSinglePlayer();
+        else JokerMultyPlayer();
+    }
+    private static void JokerMultyPlayer() {
+        int PlayerToGiveJoker;
+        Console.WriteLine("enter the player you want to give joker to");
+        PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
+        while (PlayerToGiveJoker != tempCount) {
+            Console.WriteLine("invalid player, please try again");
+            PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
+        }
+        GiveJoker(PlayerToGiveJoker);
+    }
+    private static void JokerSinglePlayer() {
+        int PlayerToGiveJoker;
+        if (tempCount == 0) {
+            Console.WriteLine("enter the player you want");
+            PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
+            while (PlayerToGiveJoker != 0) {
+                Console.WriteLine("invalid player, please try again");
+                PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
+            }
+            GiveJoker(PlayerToGiveJoker);
+        }
+        else {
+            Random rnd = new Random();
+            PlayerToGiveJoker = rnd.Next(0, numOfPlayers);
+            while (PlayerToGiveJoker != tempCount) {
+                PlayerToGiveJoker = rnd.Next(0, numOfPlayers);
+            }
+            Console.WriteLine($"gave joker to player {PlayerToGiveJoker + 1}");
+            GiveJoker(PlayerToGiveJoker);
+        }
+    }
+
+    private static void GiveJoker(int playerToGive) {
+        players[playerToGive].TakeAll();
+        BurnTurn();
+    }
+    #endregion
     public static void BroWon() {
         Won = true;
     }
@@ -195,7 +238,6 @@ public static class Shithead
     public static void BurnTurn() {
         Burn = true;
     }
-
     #endregion
 
 

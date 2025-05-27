@@ -20,6 +20,11 @@ public class Card
         this.CardStr = "0C";
     }
     public Card(string CardStr) {
+        if(CardStr == "15R" || CardStr == "15B") {
+            // Joker
+            this.CardStr = CardStr;
+            return;
+        }
         if (CardStr.Length == 2) {
             if ((!(CardStr[0] >= '2' && CardStr[0] <= '9')) || !IsValidShape(CardStr[CardStr.Length - 1])) { 
                 this.CardStr = "0C";
@@ -64,6 +69,12 @@ public class Card
     }
     #endregion
 
+    #region bool
+    public bool IsJoker() {
+        return CardStr.Equals("JokerRed") || CardStr.Equals("JokerBlack");
+    }
+    #endregion
+
     #region Override
 
     public override string ToString() {
@@ -88,6 +99,12 @@ public class Card
     #region static
     public static bool IsValidCard(string cardTry) {
         return new Card(cardTry).ToString().Equals(cardTry);
+    }
+    public static bool IsJoker(string CardStr) {
+        return CardStr.Equals("JokerRed") || CardStr.Equals("JokerBlack");
+    }
+    public static bool IsJoker(Card CardStr) {
+        return CardStr.Equals("JokerRed") || CardStr.Equals("JokerBlack");
     }
     #endregion
 }
