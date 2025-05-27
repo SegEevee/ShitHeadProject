@@ -57,6 +57,48 @@ public class CardTrio
             }
     }
 
+    public string GetBestCardShown() {
+        int[] sorted = new int[cards.Count];
+        for (int i = 0; i < cards.Count; i++) {
+            sorted[i] = cards[i].GetNumber();
+        }
+        for (int i = 0; i < sorted.Length; i++) {
+            for(int j = 0; j < sorted.Length; j++) {
+                if (sorted[i] < sorted[j]) {
+                    int temp = sorted[i];
+                    sorted[i] = sorted[j];
+                    sorted[j] = temp;
+                }
+            }
+        }
+        foreach (Card c in this.cards) {
+            switch (c.GetNumber()) {
+            case 2:
+            case 3:
+            case 10:
+                continue;
+            default:
+                if (gamePile.ValidCard(c)) {
+                    return c.ToString();
+                }
+                break;
+            }
+        }
+        foreach (Card c in this.cards) {
+            int tempNum = c.GetNumber();
+            if (tempNum == 2 || tempNum == 3 || tempNum == 10) {
+                return c.ToString();
+            }
+        }
+        return cards[cards.Count - 1].ToString();
+
+
+    }
+
+    public string DrawCardFromHidden() {
+        if (IsEmpty()) return "Won";
+        return cards[cards.Count - 1].ToString();
+    }
 
     public bool AddCard(Card card) {
         if (!shown) return false;
@@ -82,6 +124,7 @@ public class CardTrio
         if (parentHand.Won()) Shithead.BroWon();
         return false;
     }
+
 
 
     public bool Play() {
