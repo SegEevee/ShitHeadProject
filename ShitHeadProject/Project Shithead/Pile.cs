@@ -28,12 +28,21 @@ public class GamePile
     }
 
     public bool PilePlay(CardTrio trio, Card card) {
-        if (ValidCard(card)) {
-            PutCard(trio, card);
-            return true;
+        if (trio.GetShown()) {
+            if (ValidCard(card)) {
+                PutCard(trio, card);
+                return true;
+            }
+            TakePile(trio.GetParentHand());
+            return false;
         }
-        TakePile(trio.GetParentHand());
-        return false;
+        else {
+            bool IsValidBefore = true;
+            if (!ValidCard(card)) { IsValidBefore = false; }
+            PutCard(trio, card);
+            if (!IsValidBefore) TakePile(trio.GetParentHand());
+            return IsValidBefore;
+        }
     }
 
     public bool ValidCard(Card card) {

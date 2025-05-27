@@ -118,6 +118,11 @@ public class PlayerHand
         return false;
     }
 
+    //you hope that you are in the last trio...
+    public bool Play() {
+        if(GetState() != 2) return false;
+        return hiddenTrio.Play();
+    }
     public bool Play(string card) {
 
         card = card.ToUpper();
@@ -168,7 +173,16 @@ public class PlayerHand
 
     //calculates the best card to put objectivly (not accounting to other players but doesn't need to)
     public string GetBestCard() {
-        if (IsEmpty()) return "bruv";
+        switch (GetState()) {
+        case 0:
+            break;
+        case 1:
+            return shownTrio.GetBestCardShown();
+        case 2:
+            return hiddenTrio.DrawCardFromHidden();
+        case 3:
+            return "Won";
+        }
         foreach (Card c in this.hand) {
             switch (c.GetNumber()) {
             case 2:

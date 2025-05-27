@@ -69,7 +69,7 @@ public static class Shithead
         Index = 0;
 
         while (true) {
-            
+
             if (AllCounter % NUM_OF_TURNS_UNTIL_PILE_VIEW == 0) gamePile.ViewPile();
             tempCount = Math.Abs(AllCounter % NumOfPlayers);
             PlayerHand temp = players[tempCount];
@@ -100,7 +100,7 @@ public static class Shithead
         StartGameOnePlayer(DEFAULT_NUM_OF_PLAYERS);
     }
 
-   
+
     public static void StartGameOnePlayer(int NumOfPlayers) {
         string card;
         numOfPlayers = NumOfPlayers;
@@ -115,15 +115,30 @@ public static class Shithead
         while (true) {
             Console.WriteLine($"current index: {tempCount} and all counter: {AllCounter}");
             PlayerHand temp = players[tempCount];
-            
+
             if (tempCount == 0) {
                 gamePile.ViewPile();
                 temp.Show();
-                Console.WriteLine("last card in the pile: "+ gamePile.GetLastCard());
-                Console.WriteLine("enter the card you want to play");
-                card = Console.ReadLine();
+                int state = temp.GetState();
+                if (state == 3) { card = "you won bro"; break; }
+                else if (state == 2) {
+                    if (!temp.Play()) {
+                        Console.WriteLine("card {0} weaker");
+                        temp.TakeAll();
+                        Console.WriteLine($"new hand: {temp}");
+                    }
+                    if (Won) break;
+                    UpdateCounter();
+                    ZeroOut();
+                    continue;
+                }
+                else {
+                    Console.WriteLine("last card in the pile: " + gamePile.GetLastCard());
+                    Console.WriteLine("enter the card you want to play");
+                    card = Console.ReadLine();
+                }
             }
-            else { card = temp.GetBestCard(); Console.WriteLine("ai number {0} state: {1}",tempCount + 1,temp.GetState()); }
+            else { card = temp.GetBestCard(); Console.WriteLine("ai number {0} state: {1}", tempCount, temp.GetState()); }
             bool InvalidCard = !gamePile.ValidCard(card);
             Console.WriteLine(card);
             if (!temp.Play(card)) {
