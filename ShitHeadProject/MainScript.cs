@@ -9,7 +9,7 @@ namespace ShitHeadProject
     internal class MainScript
     {
         static void Main(string[] args) {
-            Shithead.StartSingleplayer();
+            Shithead.StartSingleplayer(3);
         }
     }
 }

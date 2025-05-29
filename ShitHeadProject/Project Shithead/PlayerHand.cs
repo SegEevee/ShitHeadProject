@@ -19,7 +19,7 @@ public class PlayerHand
 
     private CardTrio shownTrio;
     private CardTrio hiddenTrio;
-
+    private Card LastCardPlayed;
     private bool temporaryTakeCardForGameDeckFull = true;
 
     /// <summary>
@@ -60,6 +60,14 @@ public class PlayerHand
             }
         }
 
+    }
+
+    public void SetLastCard(Card lastcard) {
+        LastCardPlayed = lastcard;
+    }
+
+    public Card GetLastCard() {
+        return LastCardPlayed;
     }
 
     public List<Card> GetHand() { return hand; }

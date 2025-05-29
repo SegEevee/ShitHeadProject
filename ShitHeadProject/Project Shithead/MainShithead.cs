@@ -42,96 +42,6 @@ public static class Shithead
         ActualGame(4);
     }
 
-    /*
-    private static void ActualGame(int NumOfPlayers) {
-        numOfPlayers = NumOfPlayers;
-        if (numOfPlayers < 2 || numOfPlayers > 6) return;
-        gameDeck = new GameDeck();
-        gamePile = new GamePile();
-        players = new List<PlayerHand>();
-        for (int i = 1; i <= numOfPlayers; i++)
-            players.Add(new PlayerHand(gameDeck, gamePile));
-        while (true) {
-            gamePile.ViewPile();
-            for (Index = SetIndexTo; CheckDirection(); Index += indexToAdd) {
-                Console.WriteLine($"the current index is {Index}, the IndextoAdd is {indexToAdd}" +
-                    $" \n and the setindex is {SetIndexTo}");
-                PlayerHand temp = players[Index];
-                Console.Write("player {0}: ", Index + 1);
-                temp.ViewHand();
-                Console.WriteLine("enter the Card you want to");
-                string card = Console.ReadLine();
-                int tempCount = temp.CardCount();
-                bool InvalidCard = !gamePile.ValidCard(card);
-
-                if (!temp.Play(card)) {
-
-                    if (InvalidCard) {
-                        Console.WriteLine("card weaker");
-                        temp.TakeAll();
-                        Console.WriteLine($"new hand: {temp}");
-                        continue;
-                    }
-                    Console.WriteLine("invalid card");
-                    Index -= indexToAdd;
-
-                }
-                if(SomeoneWon) break;
-
-            }
-            if(SomeoneWon) break;
-
-        }
-
-        Console.WriteLine("player {0} Won! ggs",Index + 1);
-    }
-
-    */
-
-
-    //private static void ActualGame(int NumOfPlayers,bool Testing) {
-    //    numOfPlayers = NumOfPlayers;
-    //    if (numOfPlayers < 2 || numOfPlayers > 6) return;
-    //    gameDeck = new GameDeck();
-    //    gamePile = new GamePile();
-    //    players = new List<PlayerHand>();
-    //    for (int i = 1; i <= numOfPlayers; i++)
-    //        players.Add(new PlayerHand(gameDeck, gamePile,true));
-    //    while (true) {
-    //        gamePile.ViewPile();
-    //        for (Index = SetIndexTo; CheckDirection(); Index += indexToAdd) {
-    //            Console.WriteLine($"the current index is {Index}, the IndextoAdd is {indexToAdd}" +
-    //                $" \n and the setindex is {SetIndexTo}");
-    //            PlayerHand temp = players[Index];
-    //            Console.Write("player {0}: ", Index + 1);
-    //            temp.ViewHand();
-    //            Console.WriteLine("enter the Card you want to");
-    //            string card = Console.ReadLine();
-    //            int tempCount = temp.CardCount();
-    //            bool InvalidCard = !gamePile.ValidCard(card);
-
-    //            if (!temp.Play(card)) {
-
-    //                if (InvalidCard) {
-    //                    Console.WriteLine("card weaker");
-    //                    temp.TakeAll();
-    //                    Console.WriteLine($"new hand: {temp}");
-    //                    continue;
-    //                }
-    //                Console.WriteLine("invalid card");
-    //                Index -= indexToAdd;
-
-    //            }
-    //            if (SomeoneWon) break;
-
-    //        }
-    //        if (SomeoneWon) break;
-
-    //    }
-
-    //    Console.WriteLine("player {0} Won! ggs", Index + 1);
-    //}
-
     #region TryForLogic
 
     #region try
@@ -182,8 +92,8 @@ public static class Shithead
         }
     }
 
-    public static void StartSingleplayer(int NumOfPLayers) {
-        StartGameOnePlayer(numOfPlayers);
+    public static void StartSingleplayer(int playerNum) {
+        StartGameOnePlayer(playerNum);
     }
     public static void StartSingleplayer() {
         StartGameOnePlayer(DEFAULT_NUM_OF_PLAYERS);
@@ -197,24 +107,24 @@ public static class Shithead
         gameDeck = new GameDeck();
         gamePile = new GamePile();
         players = new List<PlayerHand>();
-        for (int i = 1; i <= numOfPlayers; i++)
-            players.Add(new PlayerHand(gameDeck, gamePile, true));
+        players.Add(new PlayerHand(gameDeck, gamePile));
+        for (int i = 2; i <= numOfPlayers; i++)
+            players.Add(new PlayerHand(gameDeck, gamePile,true));
         Index = 0;
 
         while (true) {
-            Console.WriteLine($"current index: {tempCount} and all counter: {AllCounter}");
-            PlayerHand temp = players[tempCount];
+            PlayerHand TempPlayerHand = players[tempCount];
 
             if (tempCount == 0) {
                 gamePile.ViewPile();
-                temp.Show();
-                int state = temp.GetState();
+                TempPlayerHand.Show();
+                int state = TempPlayerHand.GetState();
                 if (state == 3) { card = "you won bro"; break; }
                 else if (state == 2) {
-                    if (!temp.Play()) {
-                        Console.WriteLine("card {0} weaker");
-                        temp.TakeAll();
-                        Console.WriteLine($"new hand: {temp}");
+                    if (!TempPlayerHand.Play()) {
+                        Console.WriteLine("card {0} weaker",TempPlayerHand.GetLastCard());
+                        TempPlayerHand.TakeAll();
+                        Console.WriteLine($"new hand: {TempPlayerHand}");
                     }
                     if (Won) break;
                     UpdateCounter();
@@ -227,25 +137,26 @@ public static class Shithead
                     card = Console.ReadLine();
                 }
             }
-            else { card = temp.GetBestCard(); Console.WriteLine("ai number {0} state: {1}", tempCount, temp.GetState()); }
+            else { card = TempPlayerHand.GetBestCard(); Console.WriteLine("ai number {0} state: {1}", tempCount, TempPlayerHand.GetState()); }
             bool InvalidCard = !gamePile.ValidCard(card);
             Console.WriteLine(card);
-            if (!temp.Play(card)) {
+            if (!TempPlayerHand.Play(card)) {
 
                 if (InvalidCard) {
                     Console.WriteLine("card weaker");
-                    temp.TakeAll();
-                    Console.WriteLine($"new hand: {temp}");
+                    TempPlayerHand.TakeAll();
+                    Console.WriteLine($"new hand: {TempPlayerHand}");
                 }
                 else { Console.WriteLine("invalid card please try again"); continue; }
 
             }
+            Won = TempPlayerHand.Won();
             if (Won) break;
             UpdateCounter();
             ZeroOut();
         }
 
-        Console.WriteLine("reached trio");
+        Console.WriteLine("player {0} wins!",tempCount);
 
     }
 
@@ -286,101 +197,5 @@ public static class Shithead
     }
 
     #endregion
-    /*
-     * private static bool CheckDirection() {
-        TurnSkipped = false;
-        if (indexToAdd == 1) return Index < players.Count;
-        return Index >= 0;
-    }
-
-    public static void BroWon() {
-        SomeoneWon = true;
-    }
-    
-    public static void ChangeDirection() {
-        indexToAdd = -indexToAdd;
-        SetIndexTo = players.Count- 1 - SetIndexTo;
-    }
-
-    public static void SkipTurn() {
-        if(TurnSkipped) return;
-        TurnSkipped = true;
-        Index += indexToAdd;
-        if (Index == 0 || Index == players.Count - 1)
-            SetIndexTo += indexToAdd;
-    }
-
-    public static void BurnTurn() {
-        Index -= indexToAdd;
-
-
-
-     private static void TestGameUntilTrio(int NumOfPlayers) {
-        const int NUM_OF_TURNS_UNTIL_PILE_VIEW = 4;
-
-        numOfPlayers = NumOfPlayers;
-        if (numOfPlayers < 2 || numOfPlayers > 6) return;
-        gameDeck = new GameDeck();
-        gamePile = new GamePile();
-        players = new List<PlayerHand>();
-        for (int i = 1; i <= numOfPlayers; i++)
-            players.Add(new PlayerHand(gameDeck, gamePile, true));
-        Index = 0;
-
-        while (players[tempCount].GetState() == 0) {
-            if (AllCounter % NUM_OF_TURNS_UNTIL_PILE_VIEW == 0) gamePile.ViewPile();
-            tempCount = Math.Abs(AllCounter % NumOfPlayers);
-            PlayerHand temp = players[tempCount];
-            Console.Write("player {0}: ", tempCount + 1);
-            temp.Show();
-            Console.WriteLine("currenmt all counter: {0} and current tempcount: {1}", AllCounter, tempCount);
-            string card = temp.GetBestCard();
-            bool InvalidCard = !gamePile.ValidCard(card);
-            Console.WriteLine(card);
-            if (!temp.Play(card)) {
-
-                if (InvalidCard) {
-                    Console.WriteLine("card weaker");
-                    temp.TakeAll();
-                    Console.WriteLine($"new hand: {temp}");
-                }
-                else { Console.WriteLine("invalid card please try again"); continue; }
-
-            }
-            if (Won) break;
-            UpdateCounter();
-            ZeroOut();
-        }
-
-        Console.WriteLine("reached trio");
-
-        while (true) {
-
-            if (AllCounter % NUM_OF_TURNS_UNTIL_PILE_VIEW == 0) gamePile.ViewPile();
-            tempCount = Math.Abs(AllCounter % NumOfPlayers);
-            PlayerHand temp = players[tempCount];
-            Console.Write("player {0}: ", tempCount + 1);
-            temp.Show();
-            Console.WriteLine("enter the card you want to play");
-            string card = Console.ReadLine();
-            bool InvalidCard = !gamePile.ValidCard(card);
-
-            if (!temp.Play(card)) {
-
-                if (InvalidCard) {
-                    Console.WriteLine("card weaker");
-                    temp.TakeAll();
-                    Console.WriteLine($"new hand: {temp}");
-                }
-                else {Console.WriteLine("invalid card please try again"); continue; }
-            }
-            if (Won) break;
-            UpdateCounter();
-            ZeroOut();
-        }
-    }
-
-
-    }*/
-
+  
 }

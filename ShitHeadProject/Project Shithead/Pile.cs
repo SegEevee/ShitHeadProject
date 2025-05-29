@@ -18,6 +18,7 @@ public class GamePile
 
 
     public bool PilePlay(PlayerHand hand, Card card) {
+        hand.SetLastCard(card);
         if (ValidCard(card)) {
             PutCard(hand, card);
             hand.CheckTake();
@@ -28,6 +29,7 @@ public class GamePile
     }
 
     public bool PilePlay(CardTrio trio, Card card) {
+        trio.GetParentHand().SetLastCard(card);
         if (trio.GetShown()) {
             if (ValidCard(card)) {
                 PutCard(trio, card);
