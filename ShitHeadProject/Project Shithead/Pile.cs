@@ -80,20 +80,13 @@ public class GamePile
         case 2:
         case 3:
         case 10:
+        case 15:
             return true;
 
         default:
             if (last == 7) return card <= last && card >= 4;
             return card >= last;
-
-
         }
-
-
-
-
-
-
     }
 
 
@@ -111,9 +104,13 @@ public class GamePile
         case 10:
             Burn();
             break;
-
+        case 15:
+            Console.WriteLine("reached joker");
+            cardpile.RemoveAt(cardpile.Count - 1);
+            Shithead.Joker();
+            break;
         }
-
+    
         playerhand.RemoveCard(card);
 
         CheckIfBurn();
@@ -133,7 +130,11 @@ public class GamePile
         case 10:
             Burn();
             break;
-
+        case 15:
+            Console.WriteLine("reached joker");
+            cardpile.RemoveAt(cardpile.Count - 1);
+            Shithead.Joker();
+            break;
         }
 
         playerTrio.RemoveCard(card);

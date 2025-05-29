@@ -128,7 +128,7 @@ public class PlayerHand
 
     //you hope that you are in the last trio...
     public bool Play() {
-        if(GetState() != 2) return false;
+        if (GetState() != 2) return false;
         return hiddenTrio.Play();
     }
     public bool Play(string card) {
@@ -282,7 +282,11 @@ public class PlayerHand
         case 2:
             hiddenTrio.View();
             return;
+        case 3:
+            Console.WriteLine("gg you win!");
+            return;
         }
+
         Console.WriteLine("It seems I have made a mistake");
     }
 
