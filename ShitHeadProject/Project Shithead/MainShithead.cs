@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO.Pipes;
 using System.IO.Ports;
 using System.Linq;
@@ -53,6 +54,7 @@ public static class Shithead
     private static bool Burn = false;
     private static bool Skip = false;
     private static bool TurnReveresedThisTurn = false;
+    private static bool SinglePlayer = false;
     #endregion
 
     private static void ActualGame(int NumOfPlayers) {
@@ -101,6 +103,7 @@ public static class Shithead
 
 
     public static void StartGameOnePlayer(int NumOfPlayers) {
+        SinglePlayer = true;
         string card;
         numOfPlayers = NumOfPlayers;
         if (numOfPlayers < 2 || numOfPlayers > 6) return;
@@ -178,6 +181,49 @@ public static class Shithead
         tempCount = Math.Abs(AllCounter % numOfPlayers);
 
     }
+
+    #region Joker
+    public static void Joker() {
+        if (SinglePlayer) JokerSinglePlayer();
+        else JokerMultyPlayer();
+    }
+    private static void JokerMultyPlayer() {
+        int PlayerToGiveJoker;
+        Console.WriteLine("enter the player you want to give joker to");
+        PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
+        while (PlayerToGiveJoker != tempCount) {
+            Console.WriteLine("invalid player, please try again");
+            PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
+        }
+        GiveJoker(PlayerToGiveJoker);
+    }
+    private static void JokerSinglePlayer() {
+        int PlayerToGiveJoker;
+        if (tempCount == 0) {
+            Console.WriteLine("enter the player you want");
+            PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
+            while (PlayerToGiveJoker != 0) {
+                Console.WriteLine("invalid player, please try again");
+                PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
+            }
+            GiveJoker(PlayerToGiveJoker);
+        }
+        else {
+            System.Random rnd = new System.Random();
+            PlayerToGiveJoker = rnd.Next(0, numOfPlayers);
+            while (PlayerToGiveJoker != tempCount) {
+                PlayerToGiveJoker = rnd.Next(0, numOfPlayers);
+            }
+            Console.WriteLine($"gave joker to player {PlayerToGiveJoker + 1}");
+            GiveJoker(PlayerToGiveJoker);
+        }
+    }
+
+    private static void GiveJoker(int playerToGive) {
+        players[playerToGive].TakeAll();
+        BurnTurn();
+    }
+    #endregion
 
     public static void BroWon() {
         Won = true;
