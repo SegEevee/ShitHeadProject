@@ -191,7 +191,7 @@ public static class Shithead
         int PlayerToGiveJoker;
         Console.WriteLine("enter the player you want to give joker to");
         PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
-        while (PlayerToGiveJoker != tempCount) {
+        while (PlayerToGiveJoker == tempCount) {
             Console.WriteLine("invalid player, please try again");
             PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
         }
@@ -202,7 +202,7 @@ public static class Shithead
         if (tempCount == 0) {
             Console.WriteLine("enter the player you want");
             PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
-            while (PlayerToGiveJoker != 0) {
+            while (PlayerToGiveJoker == 0) {
                 Console.WriteLine("invalid player, please try again");
                 PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
             }
@@ -211,7 +211,7 @@ public static class Shithead
         else {
             System.Random rnd = new System.Random();
             PlayerToGiveJoker = rnd.Next(0, numOfPlayers);
-            while (PlayerToGiveJoker != tempCount) {
+            while (PlayerToGiveJoker == tempCount) {
                 PlayerToGiveJoker = rnd.Next(0, numOfPlayers);
             }
             Console.WriteLine($"gave joker to player {PlayerToGiveJoker + 1}");

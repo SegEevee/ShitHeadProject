@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|c:\\users\\segev\\source\\repos\\pingpongpro\\shitheadproject\\shitheadproject\\project shithead\\mainshithead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\mainshithead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\shitheadproject\\project shithead\\pile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\pile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|c:\\users\\segev\\source\\repos\\pingpongpro\\shitheadproject\\shitheadproject\\project shithead\\mainshithead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\mainshithead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\shitheadproject\\project shithead\\playerhand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\playerhand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\shitheadproject\\mainscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\mainscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\shitheadproject\\project shithead\\cardtrio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\project shithead\\cardtrio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\shitheadproject\\mainscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|solutionrelative:shitheadproject\\mainscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24F46D24-4AEB-4750-AA31-C04C1F15F149}|ShitHeadProject\\ShitHeadProject.csproj|C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\shitheadproject\\project shithead\\gamedeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,27 +50,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "CardTrio.cs",
               "DocumentMoniker": "C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\CardTrio.cs",
               "RelativeDocumentMoniker": "ShitHeadProject\\Project Shithead\\CardTrio.cs",
               "ToolTip": "C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\CardTrio.cs",
               "RelativeToolTip": "ShitHeadProject\\Project Shithead\\CardTrio.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAwwIEAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAlwI4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T14:36:43.672Z"
+              "WhenOpened": "2025-05-24T14:36:43.672Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Pile.cs",
               "DocumentMoniker": "C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\Pile.cs",
               "RelativeDocumentMoniker": "ShitHeadProject\\Project Shithead\\Pile.cs",
               "ToolTip": "C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\Pile.cs",
               "RelativeToolTip": "ShitHeadProject\\Project Shithead\\Pile.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBQAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAAFYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T17:10:42.548Z"
+              "WhenOpened": "2025-05-23T17:10:42.548Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -80,13 +82,14 @@
               "RelativeDocumentMoniker": "ShitHeadProject\\Project Shithead\\PlayerHand.cs",
               "ToolTip": "C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\PlayerHand.cs",
               "RelativeToolTip": "ShitHeadProject\\Project Shithead\\PlayerHand.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAgwEEAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAAFQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T17:06:46.576Z"
+              "WhenOpened": "2025-05-23T17:06:46.576Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MainScript.cs",
               "DocumentMoniker": "C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\ShitHeadProject\\MainScript.cs",
               "RelativeDocumentMoniker": "ShitHeadProject\\MainScript.cs",
@@ -98,13 +101,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainShithead.cs",
               "DocumentMoniker": "C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\MainShithead.cs",
               "RelativeDocumentMoniker": "ShitHeadProject\\Project Shithead\\MainShithead.cs",
               "ToolTip": "C:\\Users\\segev\\source\\repos\\PingPongPro\\ShitHeadProject\\ShitHeadProject\\Project Shithead\\MainShithead.cs",
               "RelativeToolTip": "ShitHeadProject\\Project Shithead\\MainShithead.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGkAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAALwAAAAAAAAAAAAAANUAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T17:06:56.108Z",
               "EditorCaption": ""

@@ -140,7 +140,7 @@ public class CardTrio
     public void View() {
         if (shown) {
             Console.WriteLine("state: shown");
-            Console.Write("pile: ");
+            Console.Write("trio: ");
             foreach (Card c in cards) Console.Write(c + ",");
             return;
         }

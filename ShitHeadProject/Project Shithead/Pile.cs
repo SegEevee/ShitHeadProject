@@ -84,7 +84,7 @@ public class GamePile
             return true;
 
         default:
-            if (last == 7) return card <= last && card >= 4;
+            if (last == 7) return card <= last;
             return card >= last;
         }
     }
