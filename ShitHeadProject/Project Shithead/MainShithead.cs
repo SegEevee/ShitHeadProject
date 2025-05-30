@@ -43,9 +43,37 @@ public static class Shithead
         ActualGame(4);
     }
 
-    #region TryForLogic
+    //made my magnizz
+    private static int FindStarterPlayer() {
+        const int numOfCardsAtStart = 3;
+        int first = 0;
+        bool SameCards = false;
+        int[,] count = new int[numOfPlayers, numOfCardsAtStart];
 
-    #region try
+        for (int i = 0; i < numOfPlayers; i++)
+            for (int j = 0; j < numOfCardsAtStart; j++)
+                count[i, j] += players[i].GetLeastValuableCardByNumber(j + 1);
+
+        for (int i = 0; i < numOfCardsAtStart; i++) {
+            for (int j = 1; j < numOfPlayers; j++) {
+                int check = count[j, i];
+                int check2 = count[first, i];
+                if (count[j, i] < count[first, i]) {
+                    SameCards = false;
+                    first = j;
+                }
+                else if (count[j, i] == count[first, i])
+                    SameCards = true;
+            }
+            if (!SameCards)
+                return first;
+        }
+
+
+        return first;
+    }
+
+    #region more static attreibutes
     private const int DEFAULT_NUM_OF_PLAYERS = 4;
     private static int AllCounter = 0;
     private static int tempCount = 0;
@@ -242,6 +270,5 @@ public static class Shithead
         Burn = true;
     }
 
-    #endregion
   
 }

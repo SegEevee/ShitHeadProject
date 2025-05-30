@@ -213,6 +213,19 @@ public class PlayerHand
         return hand[hand.Count - 1].ToString();
     }
 
+    //the method gets an index and return the index least valiuable card
+    public int GetLeastValuableCardByNumber(int index) {
+        int counter = 0;
+        foreach (Card c in this.hand) {
+            int check = c.GetNumber();
+            if (c.GetNumber() > 3 && c.GetNumber() != 10)
+                counter++;
+            if (counter == index)
+                return c.GetNumber();
+        }
+        return 99;
+    }
+
     public string GetRandomtCard() {
         return this.hand[random.Next(0, CardCount())].ToString();
     }
