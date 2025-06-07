@@ -218,7 +218,7 @@ public class PlayerHand
         int counter = 0;
         foreach (Card c in this.hand) {
             int check = c.GetNumber();
-            if (c.GetNumber() > 3 && c.GetNumber() != 10)
+            if (c.GetNumber() > 3 && c.GetNumber() != 10 &&c.GetNumber()!=15)
                 counter++;
             if (counter == index)
                 return c.GetNumber();

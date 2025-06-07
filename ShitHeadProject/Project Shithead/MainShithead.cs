@@ -43,26 +43,24 @@ public static class Shithead
         ActualGame(4);
     }
 
-    //made my magnizz
+    //made my magnizz best logics everrrr
     private static int FindStarterPlayer() {
         const int numOfCardsAtStart = 3;
         int first = 0;
         bool SameCards = false;
-        int[,] count = new int[numOfPlayers, numOfCardsAtStart];
 
-        for (int i = 0; i < numOfPlayers; i++)
-            for (int j = 0; j < numOfCardsAtStart; j++)
-                count[i, j] += players[i].GetLeastValuableCardByNumber(j + 1);
 
         for (int i = 0; i < numOfCardsAtStart; i++) {
             for (int j = 1; j < numOfPlayers; j++) {
-                int check = count[j, i];
-                int check2 = count[first, i];
-                if (count[j, i] < count[first, i]) {
+
+                int c1 = players[j].GetLeastValuableCardByNumber(i + 1);
+                int c2 = players[first].GetLeastValuableCardByNumber(i + 1);
+
+                if (c1 < c2){ 
                     SameCards = false;
                     first = j;
                 }
-                else if (count[j, i] == count[first, i])
+                else if (c1 == c2)
                     SameCards = true;
             }
             if (!SameCards)
@@ -95,7 +93,8 @@ public static class Shithead
         players = new List<PlayerHand>();
         for (int i = 1; i <= numOfPlayers; i++)
             players.Add(new PlayerHand(gameDeck, gamePile, true));
-        Index = 0;
+        Index = FindStarterPlayer();
+        AllCounter = Index;
 
         while (true) {
 

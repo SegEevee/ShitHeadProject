@@ -12,3 +12,10 @@ C:\Users\segev\source\repos\PingPongPro\ShitHeadProject\ShitHeadProject\obj\Debu
 C:\Users\segev\source\repos\PingPongPro\ShitHeadProject\ShitHeadProject\obj\Debug\ShitHeadProject.csproj.CoreCompileInputs.cache
 C:\Users\segev\source\repos\PingPongPro\ShitHeadProject\ShitHeadProject\obj\Debug\ShitHeadProject.exe
 C:\Users\segev\source\repos\PingPongPro\ShitHeadProject\ShitHeadProject\obj\Debug\ShitHeadProject.pdb
+C:\Users\ron_f\OneDrive\Documents\GitHub\ShitHeadProject\ShitHeadProject\bin\Debug\ShitHeadProject.exe.config
+C:\Users\ron_f\OneDrive\Documents\GitHub\ShitHeadProject\ShitHeadProject\bin\Debug\ShitHeadProject.exe
+C:\Users\ron_f\OneDrive\Documents\GitHub\ShitHeadProject\ShitHeadProject\bin\Debug\ShitHeadProject.pdb
+C:\Users\ron_f\OneDrive\Documents\GitHub\ShitHeadProject\ShitHeadProject\obj\Debug\ShitHeadProject.csproj.AssemblyReference.cache
+C:\Users\ron_f\OneDrive\Documents\GitHub\ShitHeadProject\ShitHeadProject\obj\Debug\ShitHeadProject.csproj.CoreCompileInputs.cache
+C:\Users\ron_f\OneDrive\Documents\GitHub\ShitHeadProject\ShitHeadProject\obj\Debug\ShitHeadProject.exe
+C:\Users\ron_f\OneDrive\Documents\GitHub\ShitHeadProject\ShitHeadProject\obj\Debug\ShitHeadProject.pdb
