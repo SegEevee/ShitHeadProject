@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShitHeadProject;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO.Pipes;
@@ -31,40 +32,67 @@ public static class Shithead
     private static bool TurnSwiched = false;
 
     public static bool SomeoneWon = false;
-    public static void StartGame(bool Input) {
+    public static void StartGame(bool Input)
+    {
         if (Input) ActualGame(int.Parse(Console.ReadLine()));
         ActualGame(4);
     }
-    public static void StartGame(int NumOfPlayers) {
+    public static void StartGame(int NumOfPlayers)
+    {
         ActualGame(NumOfPlayers);
     }
 
-    public static void StartGame() {
+    public static void StartGame()
+    {
         ActualGame(4);
     }
 
     //made my magnizz best logics everrrr
-    private static int FindStarterPlayer() {
+    private static int FindStarterPlayer()
+    {
         const int numOfCardsAtStart = 3;
         int first = 0;
         bool SameCards = false;
+        bool[] checks = new bool[numOfPlayers];
+        MagazUtils.ResetToFalse(checks);
 
+        for (int j = first + 1; j < numOfPlayers; j++)
+        {
 
-        for (int i = 0; i < numOfCardsAtStart; i++) {
-            for (int j = 1; j < numOfPlayers; j++) {
+            int c1 = players[j].GetLeastValuableCardByNumber(1);
+            int c2 = players[first].GetLeastValuableCardByNumber(1);
 
+            if (c1 < c2)
+            {
+                SameCards = false;
+                first = j;
+                MagazUtils.ResetToFalse(checks);
+            }
+            else if (c1 == c2)
+            {
+                SameCards = true;
+                checks[j] = true;
+            }
+        }
+        if (!SameCards)
+            return first;
+
+        for (int i = 1; i < numOfCardsAtStart && SameCards; i++)
+        {
+            SameCards = false;
+            for (int j = first + 1; j < numOfPlayers; j++)
+            {
                 int c1 = players[j].GetLeastValuableCardByNumber(i + 1);
                 int c2 = players[first].GetLeastValuableCardByNumber(i + 1);
 
-                if (c1 < c2){ 
+                if (c1 < c2 && checks[j])
+                {
                     SameCards = false;
                     first = j;
                 }
-                else if (c1 == c2)
+                else if (c1 == c2 && checks[j])
                     SameCards = true;
             }
-            if (!SameCards)
-                return first;
         }
 
 
@@ -83,7 +111,8 @@ public static class Shithead
     private static bool SinglePlayer = false;
     #endregion
 
-    private static void ActualGame(int NumOfPlayers) {
+    private static void ActualGame(int NumOfPlayers)
+    {
         const int NUM_OF_TURNS_UNTIL_PILE_VIEW = 4;
 
         numOfPlayers = NumOfPlayers;
@@ -96,7 +125,8 @@ public static class Shithead
         Index = FindStarterPlayer();
         AllCounter = Index;
 
-        while (true) {
+        while (true)
+        {
 
             if (AllCounter % NUM_OF_TURNS_UNTIL_PILE_VIEW == 0) gamePile.ViewPile();
             tempCount = Math.Abs(AllCounter % NumOfPlayers);
@@ -107,9 +137,11 @@ public static class Shithead
             string card = Console.ReadLine();
             bool InvalidCard = !gamePile.ValidCard(card);
 
-            if (!temp.Play(card)) {
+            if (!temp.Play(card))
+            {
 
-                if (InvalidCard) {
+                if (InvalidCard)
+                {
                     Console.WriteLine("card weaker");
                     temp.TakeAll();
                     Console.WriteLine($"new hand: {temp}");
@@ -121,15 +153,18 @@ public static class Shithead
         }
     }
 
-    public static void StartSingleplayer(int playerNum) {
+    public static void StartSingleplayer(int playerNum)
+    {
         StartGameOnePlayer(playerNum);
     }
-    public static void StartSingleplayer() {
+    public static void StartSingleplayer()
+    {
         StartGameOnePlayer(DEFAULT_NUM_OF_PLAYERS);
     }
 
 
-    public static void StartGameOnePlayer(int NumOfPlayers) {
+    public static void StartGameOnePlayer(int NumOfPlayers)
+    {
         SinglePlayer = true;
         string card;
         numOfPlayers = NumOfPlayers;
@@ -139,20 +174,24 @@ public static class Shithead
         players = new List<PlayerHand>();
         players.Add(new PlayerHand(gameDeck, gamePile));
         for (int i = 2; i <= numOfPlayers; i++)
-            players.Add(new PlayerHand(gameDeck, gamePile,true));
+            players.Add(new PlayerHand(gameDeck, gamePile, true));
         Index = 0;
 
-        while (true) {
+        while (true)
+        {
             PlayerHand TempPlayerHand = players[tempCount];
 
-            if (tempCount == 0) {
+            if (tempCount == 0)
+            {
                 gamePile.ViewPile();
                 TempPlayerHand.Show();
                 int state = TempPlayerHand.GetState();
                 if (state == 3) { card = "you won bro"; break; }
-                else if (state == 2) {
-                    if (!TempPlayerHand.Play()) {
-                        Console.WriteLine("card {0} weaker",TempPlayerHand.GetLastCard());
+                else if (state == 2)
+                {
+                    if (!TempPlayerHand.Play())
+                    {
+                        Console.WriteLine("card {0} weaker", TempPlayerHand.GetLastCard());
                         TempPlayerHand.TakeAll();
                         Console.WriteLine($"new hand: {TempPlayerHand}");
                     }
@@ -161,7 +200,8 @@ public static class Shithead
                     ZeroOut();
                     continue;
                 }
-                else {
+                else
+                {
                     Console.WriteLine("last card in the pile: " + gamePile.GetLastCard());
                     Console.WriteLine("enter the card you want to play");
                     card = Console.ReadLine();
@@ -170,9 +210,11 @@ public static class Shithead
             else { card = TempPlayerHand.GetBestCard(); Console.WriteLine("ai number {0} state: {1}", tempCount, TempPlayerHand.GetState()); }
             bool InvalidCard = !gamePile.ValidCard(card);
             Console.WriteLine(card);
-            if (!TempPlayerHand.Play(card)) {
+            if (!TempPlayerHand.Play(card))
+            {
 
-                if (InvalidCard) {
+                if (InvalidCard)
+                {
                     Console.WriteLine("card weaker");
                     TempPlayerHand.TakeAll();
                     Console.WriteLine($"new hand: {TempPlayerHand}");
@@ -186,21 +228,24 @@ public static class Shithead
             ZeroOut();
         }
 
-        Console.WriteLine("player {0} wins!",tempCount);
+        Console.WriteLine("player {0} wins!", tempCount);
 
     }
 
 
 
-    private static void ZeroOut() {
+    private static void ZeroOut()
+    {
         Burn = false;
         Skip = false;
         TurnReveresedThisTurn = false;
     }
 
-    private static void UpdateCounter() {
+    private static void UpdateCounter()
+    {
         if (Burn) return;
-        if (TurnForward) {
+        if (TurnForward)
+        {
             AllCounter++;
             if (Skip) AllCounter++;
         }
@@ -210,35 +255,43 @@ public static class Shithead
     }
 
     #region Joker
-    public static void Joker() {
+    public static void Joker()
+    {
         if (SinglePlayer) JokerSinglePlayer();
         else JokerMultyPlayer();
     }
-    private static void JokerMultyPlayer() {
+    private static void JokerMultyPlayer()
+    {
         int PlayerToGiveJoker;
         Console.WriteLine("enter the player you want to give joker to");
         PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
-        while (PlayerToGiveJoker == tempCount) {
+        while (PlayerToGiveJoker == tempCount)
+        {
             Console.WriteLine("invalid player, please try again");
             PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
         }
         GiveJoker(PlayerToGiveJoker);
     }
-    private static void JokerSinglePlayer() {
+    private static void JokerSinglePlayer()
+    {
         int PlayerToGiveJoker;
-        if (tempCount == 0) {
+        if (tempCount == 0)
+        {
             Console.WriteLine("enter the player you want");
             PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
-            while (PlayerToGiveJoker == 0) {
+            while (PlayerToGiveJoker == 0)
+            {
                 Console.WriteLine("invalid player, please try again");
                 PlayerToGiveJoker = int.Parse(Console.ReadLine()) - 1;
             }
             GiveJoker(PlayerToGiveJoker);
         }
-        else {
+        else
+        {
             System.Random rnd = new System.Random();
             PlayerToGiveJoker = rnd.Next(0, numOfPlayers);
-            while (PlayerToGiveJoker == tempCount) {
+            while (PlayerToGiveJoker == tempCount)
+            {
                 PlayerToGiveJoker = rnd.Next(0, numOfPlayers);
             }
             Console.WriteLine($"gave joker to player {PlayerToGiveJoker + 1}");
@@ -246,28 +299,33 @@ public static class Shithead
         }
     }
 
-    private static void GiveJoker(int playerToGive) {
+    private static void GiveJoker(int playerToGive)
+    {
         players[playerToGive].TakeAll();
         BurnTurn();
     }
     #endregion
 
-    public static void BroWon() {
+    public static void BroWon()
+    {
         Won = true;
     }
-    public static void ChangeDirection() {
+    public static void ChangeDirection()
+    {
         if (TurnReveresedThisTurn) return;
         TurnReveresedThisTurn = true;
         TurnForward = !TurnForward;
     }
-    public static void SkipTurn() {
+    public static void SkipTurn()
+    {
 
         Skip = true;
 
     }
-    public static void BurnTurn() {
+    public static void BurnTurn()
+    {
         Burn = true;
     }
 
-  
+
 }

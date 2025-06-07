@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MagazUtils.cs" />
     <Compile Include="MainScript.cs" />
     <Compile Include="Project Shithead\CardTrio.cs" />
     <Compile Include="Project Shithead\GameDeck.cs" />
